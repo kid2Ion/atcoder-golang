@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"math"
 	"os"
 	"strconv"
 )
@@ -20,25 +21,58 @@ func init() {
 }
 
 func main() {
-
 }
 
 /*==========================================
  *             Library
  *==========================================*/
 
-// 一行ずつ読み込む
-func nextLine() string {
+// 一行読み込み
+func next() string {
 	sc.Scan()
 	return sc.Text()
 }
 
-// スペース区切りで読み込む
+// intで読み込み(1文字)
 func nextInt() int {
-	sc.Scan()
-	i, e := strconv.Atoi(sc.Text())
-	if e != nil {
-		panic(e)
-	}
+	i, _ := strconv.Atoi(next())
 	return i
+}
+
+// floatで読み込み(1文字)
+func nextFloat64() float64 {
+	f, _ := strconv.ParseFloat(next(), 64)
+	return f
+}
+
+// 空白区切り→配列(int)
+func nextIntList(n int) []int {
+	arr := make([]int, n)
+	for i := 0; i < n; i++ {
+		arr[i] = nextInt()
+	}
+	return arr
+}
+
+// 空白区切り→配列(float64)
+func nextFloatList(n int) []float64 {
+	arr := make([]float64, n)
+	for i := 0; i < n; i++ {
+		arr[i] = nextFloat64()
+	}
+	return arr
+}
+
+// 空白区切り→配列(string)
+func nextStringList(n int) []string {
+	arr := make([]string, n)
+	for i := 0; i < n; i++ {
+		arr[i] = next()
+	}
+	return arr
+}
+
+// 冪乗(intのままでok)
+func pow(x, y int) int {
+	return int(math.Pow(float64(x), float64(y)))
 }
