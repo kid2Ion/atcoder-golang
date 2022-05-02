@@ -24,7 +24,7 @@ func main() {
 }
 
 /*==========================================
- *             Library
+ *             Library_origin
  *==========================================*/
 
 // 一行読み込み
@@ -76,3 +76,19 @@ func nextStringList(n int) []string {
 func pow(x, y int) int {
 	return int(math.Pow(float64(x), float64(y)))
 }
+
+/*==========================================
+ *             Library_default_package
+ *==========================================*/
+
+// 文字列→配列
+// arr := strings.Split(s, "")
+
+// 配列→文字列
+// s := strings.Join(arr, "")
+
+// sort(int）(返り値なし)
+// sort.Ints(arr)
+
+// sort(アルファベット順)(返り値なし)
+// sort.Strings(arr)
