@@ -81,6 +81,9 @@ func pow(x, y int) int {
  *             Library_default_package
  *==========================================*/
 
+// 辞書順比較
+// s < t (string同士の比較)
+
 // 文字列→配列
 // arr := strings.Split(s, "")
 
