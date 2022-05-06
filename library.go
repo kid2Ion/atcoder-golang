@@ -72,7 +72,7 @@ func nextStringList(n int) []string {
 	return arr
 }
 
-// 冪乗(intのままでok)
+// 冪乗(intのままでok)(xのy乗)
 func pow(x, y int) int {
 	return int(math.Pow(float64(x), float64(y)))
 }
@@ -113,3 +113,9 @@ func min(a, b int) int {
 
 // sort(アルファベット順)(返り値なし)
 // sort.Strings(arr)
+
+// 排他的論理和(XOR)(aとbの)
+// a ^ b
+
+// 平方根
+// math.Sqrt(float64(x))
