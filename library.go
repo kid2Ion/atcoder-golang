@@ -77,6 +77,24 @@ func pow(x, y int) int {
 	return int(math.Pow(float64(x), float64(y)))
 }
 
+// 比較して大きい数字返却
+func max(a, b int) int {
+	if a >= b {
+		return a
+	} else {
+		return b
+	}
+}
+
+// 比較して小さい数字返却
+func min(a, b int) int {
+	if a <= b {
+		return a
+	} else {
+		return b
+	}
+}
+
 /*==========================================
  *             Library_default_package
  *==========================================*/
