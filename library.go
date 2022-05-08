@@ -114,6 +114,24 @@ func PrintBool(a bool) {
 	}
 }
 
+// 最小数字を返す(引数は複数) ex, nmin(1, 3, 6)
+func nmin(a ...int) int {
+	ret := a[0]
+	for _, v := range a {
+		ret = min(ret, v)
+	}
+	return ret
+}
+
+// 最大数字を返す(引数は複数) ex, nmax(1, 3, 6)
+func nmax(a ...int) int {
+	ret := a[0]
+	for _, v := range a {
+		ret = max(ret, v)
+	}
+	return ret
+}
+
 /*==========================================
  *             Library_default_package
  *==========================================*/
@@ -148,3 +166,9 @@ func PrintBool(a bool) {
 
 // s→tは何文字後か(アルファベット)(zの次はa)
 // (s + 26 - t) % 26
+
+// sは特定の文字列(t)を含むかどうかを判断
+// strings.Contains(s, t)
+
+// 同一文字列を繰り返す
+// s := strings.Repeat("s", 10)
