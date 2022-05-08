@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"math"
 	"os"
 	"strconv"
@@ -95,6 +96,24 @@ func min(a, b int) int {
 	}
 }
 
+// stringのリバースを返す(abcd→dcba)
+func reverse(s string) string {
+	rs := []rune(s)
+	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
+		rs[i], rs[j] = rs[j], rs[i]
+	}
+	return string(rs)
+}
+
+// "Yes","No"の出力
+func PrintBool(a bool) {
+	if a {
+		fmt.Println("Yes")
+	} else {
+		fmt.Println("No")
+	}
+}
+
 /*==========================================
  *             Library_default_package
  *==========================================*/
@@ -119,3 +138,13 @@ func min(a, b int) int {
 
 // 平方根
 // math.Sqrt(float64(x))
+
+// string(英数字)の切り取り
+// s[1:3]→1文字目から3文字目まで
+// s[:2]→2文字目まで
+
+// string(s)の3文字目
+// s[2]
+
+// s→tは何文字後か(アルファベット)(zの次はa)
+// (s + 26 - t) % 26
