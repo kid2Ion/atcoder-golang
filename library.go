@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"math"
 	"os"
+	"reflect"
 	"strconv"
 )
 
@@ -130,6 +131,65 @@ func nmax(a ...int) int {
 		ret = max(ret, v)
 	}
 	return ret
+}
+
+// スライスから特定の要素削除(int)
+func removei(ints []int, search int) []int {
+	result := []int{}
+	for _, v := range ints {
+		if v != search {
+			result = append(result, v)
+		}
+	}
+	return result
+}
+
+// スライスから特定の要素削除(string)
+func removes(strings []string, search string) []string {
+	result := []string{}
+	for _, v := range strings {
+		if v != search {
+			result = append(result, v)
+		}
+	}
+	return result
+}
+
+// sliceに特定の要素の存在確認(各型→bool, err)
+func contains(target interface{}, list interface{}) (bool, error) {
+
+	switch list.(type) {
+	default:
+		return false, fmt.Errorf("%v is an unsupported type", reflect.TypeOf(list))
+	case []int:
+		revert := list.([]int)
+		for _, r := range revert {
+			if target == r {
+				return true, nil
+			}
+		}
+		return false, nil
+
+	case []float64:
+		revert := list.([]float64)
+		for _, r := range revert {
+			if target == r {
+				return true, nil
+			}
+		}
+		return false, nil
+
+	case []string:
+		revert := list.([]string)
+		for _, r := range revert {
+			if target == r {
+				return true, nil
+			}
+		}
+		return false, nil
+	}
+
+	return false, fmt.Errorf("processing failed")
 }
 
 /*==========================================
