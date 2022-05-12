@@ -74,6 +74,15 @@ func nextStringList(n int) []string {
 	return arr
 }
 
+// 縦h横wの行列→配列の配列   ex)[[3,2,1], [1,1,1], [3,4,2]]
+func matrix(h, w int) [][]int {
+	a := make([][]int, h)
+	for i := 0; i < h; i++ {
+		a[i] = nextIntList(w)
+	}
+	return a
+}
+
 // 冪乗(intのままでok)(xのy乗)
 func pow(x, y int) int {
 	return int(math.Pow(float64(x), float64(y)))
@@ -104,6 +113,15 @@ func reverse(s string) string {
 		rs[i], rs[j] = rs[j], rs[i]
 	}
 	return string(rs)
+}
+
+// 文字列をシフト（スライド）してできる文字列の配列を返却
+func shifts(s string) []string {
+	m := make([]string, len(s))
+	for i := 0; i < len(s); i++ {
+		m[i] = s[len(s)-i:] + s[0:len(s)-i]
+	}
+	return m
 }
 
 // "Yes","No"の出力
