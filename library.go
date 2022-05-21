@@ -250,3 +250,6 @@ func contains(target interface{}, list interface{}) (bool, error) {
 
 // 同一文字列を繰り返す
 // s := strings.Repeat("s", 10)
+
+// 配列、mapがイコールか比較
+// reflect.DeepEqual(s,t)
