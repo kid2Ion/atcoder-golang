@@ -24,23 +24,14 @@ func init() {
 
 func main() {
 	n := nextInt()
-	firstName := make([]string, n)
-	lastName := make([]string, n)
+	m := make(map[string]bool, n)
 	for i := 0; i < n; i++ {
-		firstName[i] = next()
-		lastName[i] = next()
-	}
-	for i := 0; i < n; i++ {
-		for j := 0; j < n; j++ {
-			if i == j {
-				continue
-			} else {
-				if firstName[i] == firstName[j] && lastName[i] == lastName[j] {
-					PrintBool(true)
-					return
-				}
-			}
+		a := next() + " " + next()
+		if m[a] {
+			PrintBool(true)
+			return
 		}
+		m[a] = true
 	}
 	PrintBool(false)
 }
