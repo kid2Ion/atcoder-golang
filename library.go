@@ -210,6 +210,24 @@ func contains(target interface{}, list interface{}) (bool, error) {
 	return false, fmt.Errorf("processing failed")
 }
 
+// 順列（permutation）(5P3)
+func permutation(n int, k int) int {
+	v := 1
+	if 0 < k && k <= n {
+		for i := 0; i < k; i++ {
+			v *= (n - i)
+		}
+	} else if k > n {
+		v = 0
+	}
+	return v
+}
+
+// 階乗(5!)
+func factorial(n int) int {
+	return permutation(n, n-1)
+}
+
 /*==========================================
  *             Library_default_package
  *==========================================*/
